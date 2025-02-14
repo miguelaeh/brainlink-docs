@@ -8,17 +8,18 @@ description: 'Integrate the BrainLink SDK in 5 minutes and stop requesting AI AP
 Integrating BrainLink in your application allows your users to pay for their own AI spending by connecting their BrainLink account
 to your application with a single click.
 
-Traditionally, most AI applications have requested users to copy/paste theit API keys from other providers, however, that
-practise generates a huge amount of friction to your application, goes against most AI providers' terms of service and creates important security issues.
+Traditionally, most AI applications have requested users to copy/paste their API keys from other providers, however, that
+practise generates a huge amount of friction, goes against most AI providers' terms of service and creates important security issues.
 
 ### Integrating BrainLink
 
 <AccordionGroup>
   <Accordion icon="github" title="Register your application with BrainLink">
+    > If your app is not deployed to a public URL yet, skip the registration and use `58c5ee00-4799-4a0b-88dd-2ff99702a298` as the app client ID. The user will be redirected to `http://localhost:3000` as callback URL.
+
     1. Create your own BrainLink account by going to the [dashboard](https://www.brainlink.dev/dashboard).
     1. Click on the top right menu icon and click on "Register application" under the developer section.
-    1. Fill the form with the data with your application data. If you have not yet deployed your application, you can use `http://localhost:3000` on the URLs to test
-    your integration locally. Otherwise, provide the actual application URL.
+    1. Fill the form with your application data. If you application is a desktop app, the callback URL should point to localhost.
     For the callback URL, if you don't plan to redirect the user to a specific page after connecting their account, just provide the base URL of the application.
     In most of the cases, it matches the application website URL.
     1. Copy the application client ID that is shown after the registration.
@@ -41,6 +42,30 @@ practise generates a huge amount of friction to your application, goes against m
 
 And that's all! Now your users will pay for the inference they consume by connecting their BrainLink account with your application in one click, so you don't have
 to request them API keys.
+
+### Running inference
+
+BrainLink's API is fully OpenAI compatible, so you can directly use the OpenAI SDK or any other compatible one, just change the `baseURL` to `https://www.brainlink.dev/api/v1`.
+
+For example:
+
+```javascript
+if (BrainLink.isConnected()) {
+    const userAccessToken = await BrainLink.getUserToken();
+    const openai = new OpenAI({
+        baseURL: "https://www.brainlink.dev/api/v1",
+        apiKey: userAccessToken,
+        // Required to use the OpenAI SDK in the browser.
+        // Since your app is securely using the user's access token via BrainLink, it's totally safe to use the SDK on the browser.
+        dangerouslyAllowBrowser: true,
+    });
+}
+
+const completion = await openai?.chat.completions.create({
+    model: "google/gemini-2.0-flash-lite-preview-02-05:free",
+    messages: messages,
+});
+```
 
 ## Shortcuts
 
