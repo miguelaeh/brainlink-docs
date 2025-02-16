@@ -22,7 +22,8 @@
           {
             "group": "For developers",
             "pages": [
-              "developers/quickstart"
+              "developers/quickstart",
+	      "developers/oauth"
             ]
           }
         ]
@@ -58,7 +59,7 @@
   "footer": {
     "socials": {
       "x": "https://x.com/brainlinkHQ",
-      "github": "https://github.com/miguelaeh",
+      "github": "https://github.com/brainlinkHQ",
       "linkedin": "https://linkedin.com/company/brainlink"
     }
   }
