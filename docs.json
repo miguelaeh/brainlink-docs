@@ -27,6 +27,10 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Supported Models",
+	"href: "https://www.brainlink.dev/models"
       }
     ],
     "global": {
