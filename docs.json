@@ -24,10 +24,7 @@
             "pages": [
               "developers/quickstart",
 	      "developers/oauth",
-              {
-                "title": "Supported Models",
-                "url": "https://www.brainlink.dev/models"
-              }
+              "developers/supported-models" 
             ]
           }
         ]
