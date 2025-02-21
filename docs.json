@@ -24,7 +24,8 @@
             "pages": [
               "developers/quickstart",
 	      "developers/oauth",
-              "developers/supported-models" 
+              "developers/supported-models",
+              "developers/examples"
             ]
           }
         ]
