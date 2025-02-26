@@ -1,24 +1,22 @@
 ---
 title: 'BrainLink Developer Quickstart'
-description: 'Integrate the BrainLink SDK in 5 minutes and stop requesting AI API keys to your users'
+description: 'Integrate BrainLink and list your app in the AI store in 5 minutes.'
 ---
 
 ## BrainLink Developer Docs
 
-Integrating BrainLink in your application allows your users to pay for their own AI spending by connecting their BrainLink account
-to your application with a single click.
+Integrating BrainLink in your app allows your users to connect their brains with a single click.
+This allows you to get rid of the inference costs and provides your app with a simple way to monetize without paywalls or sign-up forms.
 
-Traditionally, most AI applications have requested users to copy/paste their API keys from other providers, however, that
-generates a huge amount of friction, goes against most AI providers' terms of service and creates important security issues.
-Using BrainLink, users don't need to know what's an API key, for them, it is just a user friendly account that they can easily use with your application (and many others).
+By integrating BrainLink your app is automatically listed in the BraiLink AI store, which is a powerful distribution channel and source of users.
 
-> NOTE: BrainLink is NOT a key aggregator. Users do NOT have to setup BrainLink with their keys. They don't even need to know what's an API key to use your app if you integrate BrainLink.
+We are devs building for fellow devs.
 
 ### Integrating BrainLink
 
 <AccordionGroup>
   <Accordion icon="github" title="Register your application with BrainLink">
-    > If your app is not deployed to a public URL yet, skip the registration and use `58c5ee00-4799-4a0b-88dd-2ff99702a298` as the app client ID. The user will be redirected to `http://localhost:3000` as callback URL.
+    > If your are still testing your app and have no public URL, skip the registration and use `58c5ee00-4799-4a0b-88dd-2ff99702a298` as the app client ID. The user will be redirected to `http://localhost:3000` as callback URL.
 
     1. Create your own BrainLink account by going to the [dashboard](https://www.brainlink.dev/dashboard).
     1. Click on the top right menu icon and click on "Register application" under the developer section.
@@ -32,9 +30,9 @@ Using BrainLink, users don't need to know what's an API key, for them, it is jus
     To see complete examples for different frameworks see our [examples repository](https://github.com/miguelaeh/brainlink-examples).
   </Accordion>
   <Accordion icon="rectangle-terminal" title="For the rest">
-    If you are using other type of framework or pure HTML/CSS/Javascript, import the BrainLink SDK script:
+    You can also import the BrainLink SDK script directly:
     ```html
-    <Script type="module" src="https://unpkg.com/@brainlink/spa-sdk/dist/index.js" crossOrigin="anonymous" />
+    <script type="module" src="https://unpkg.com/@brainlink/spa-sdk/dist/index.js" crossOrigin="anonymous" />
     ```
 
     Then, create a button and set as the `on-click` attribute the `BrainLink.startCodeExchange(appClientId, appCallbackUrl);` method.
