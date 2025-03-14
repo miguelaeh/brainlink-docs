@@ -26,7 +26,19 @@ We are devs building for fellow devs.
     1. Copy the application client ID that is shown after the registration.
   </Accordion>
   <Accordion icon="rectangle-terminal" title="For React based frameworks like Next.js">
-    If you are using React based frameworks like Next.js, you can directly import the BrainLink button as explained on the [main website](https://www.brainlink.dev/developers).
+    If you are using React based frameworks like Next.js, you can directly import the BrainLink button:
+
+    ```javascript
+    import * as BrainLink from "@brainlink/spa-sdk";
+    import BrainLinkButton from "@brainlink/react-button";
+    ...
+    // Use the button on your app
+    <BrainLinkButton appClientId="your-brainlink-app-client-id" />
+    ...
+    // Get the user access token to run inference (see next below)
+    const userAccessToken = await BrainLink.getUserToken();
+    ```
+
     To see complete examples for different frameworks see our [examples repository](https://github.com/miguelaeh/brainlink-examples).
   </Accordion>
   <Accordion icon="rectangle-terminal" title="For the rest">
